@@ -1,0 +1,38 @@
+services:
+  backend:
+    build:
+      context: D:\DotNET Projects\jobPositionApi\JobPositionAPI  
+    ports:
+      - "5235:5235"   
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5235  
+    networks:
+      - app-network
+    depends_on:
+      - rabbitmq   
+
+  frontend:
+    build:
+      context: D:\React Development\job-position-management  
+    ports:
+      - "5173:80"  
+    networks:
+      - app-network
+    depends_on:
+      - backend   
+
+  rabbitmq:
+    image: "rabbitmq:management"
+    ports:
+      - "15672:15672"  
+      - "5672:5672"   
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+
+
