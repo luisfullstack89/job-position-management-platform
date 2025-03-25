@@ -12,13 +12,38 @@ BE - .NET
 
 Both FE and BE are dockerized.
 
+## Backend Testing Modifications
+To prepare the backend for testing, please apply the following changes:
+
+- In JobPositionAPI/controller/PositionsController.cs:
+
+  Uncomment line 26.
+
+  Comment out line 27.
+
+- In JobPositionAPI/services/RabbitMqConsumerService.cs:
+
+  Uncomment line 19.
+
+  Comment out line 20.
+
+## Frontend Testing Modifications
+To prepare the frontend for testing, please apply the following changes:
+
+- In services/api.ts:
+
+  Uncomment line 3.
+
+  Comment out line 4.
+
+- In services/signalRservice.ts:
+
+  For testing purposes, use the following URL in line 7:
+  https://localhost:7154/positionHub.
 
 ## Demo
 
 How to run the project using docker
-
-
-In the docket.compose.yml file replace the backend's docker file path with your relative docker file path. ( Same for the Frontend )
 
 cmds : 
 docker-compose -p <project-name> up --build
