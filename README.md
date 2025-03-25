@@ -46,7 +46,7 @@ To prepare the frontend for testing, please apply the following changes:
 How to run the project using docker
 
 cmds : 
-docker-compose -p <project-name> up --build
+docker-compose -p jobposition up --build
 
 
 
