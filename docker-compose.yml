@@ -1,7 +1,7 @@
 services:
   backend:
     build:
-      context: D:\DotNET Projects\jobPositionApi\JobPositionAPI  
+      context: .\JobPositionAPI  
     ports:
       - "5235:5235"   
     environment:
@@ -14,7 +14,7 @@ services:
 
   frontend:
     build:
-      context: D:\React Development\job-position-management  
+      context: .\job-position-management  
     ports:
       - "5173:80"  
     networks:
